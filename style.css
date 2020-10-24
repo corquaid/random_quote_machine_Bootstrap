@@ -1,0 +1,65 @@
+
+@font-face {
+  font-family: 'saxmono';
+  src: url(Fonts/saxmono-webfont.woff);
+  font-style: normal;
+  font-weight: bold;
+}
+
+body {
+  background-color: #898787;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h5 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+button, a {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 767px) {
+
+  img {
+    max-width: 120px;
+    max-height: 200px;
+  }
+
+  .col-md-3 {
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+.card-header {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+} 
+
+
+.btn-twitter{
+  color:#fff;
+  background-color:#55acee;
+  border-color:rgba(0,0,0,0.2)
+}
+  
+.btn-twitter:focus,.btn-twitter.focus{
+  color:#fff;
+  background-color:#2795e9;
+  border-color:rgba(0,0,0,0.2)
+}
+
+.fcc-text {
+  font-family: 'saxmono';
+}

@@ -4,97 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Random Quote Machine</title>
-  <script>
-    // Javascript content
-
-    const quoteList = [
-      {
-        quote: "That might have been a small step for Neil, but it was a big one for me.",
-        author: "Pete Conrad, Apollo 12 Commander"
-      },
-      {
-        quote: "We choose to go to the Moon and do those other things, not because they are easy but because they are hard.",
-        author: "John F. Kennedy"
-      },
-      {
-        quote: "The best part is no part.",
-        author: "Elon Musk"
-      }
-    ]
-
-    window.onload = init;
-    function init() {
-      generateQuote();
-    }
-
-function generateQuote() {
-  let quoteLength = quoteList.length;
-  let randomIndex = Math.floor(Math.random() * quoteLength);
-  let randomQuote = quoteList[randomIndex];
-  
-  // Create link to share to Twitter
-  let tweetLink = "https://twitter.com/intent/tweet?&text=%23quotes "
-
-  let encodedQuote = randomQuote.quote.replace(/ /g, "%20");
-
-  let encodedAuthor = randomQuote.author.replace(/ /g, "%20");
-
-  // Add quote as string to link
-  tweetLink += '"' + encodedQuote + '" - ';
-
-  // Add author as string to link
-  tweetLink += encodedAuthor;
- 
-  document.getElementById("tweet-quote").href = tweetLink;
-
-  document.getElementById("text").innerText = randomQuote.quote;
-
-  document.getElementById("author").innerText = randomQuote.author;
-
-  document.getElementById("author-image").src = random.image;
-}
-
-  </script>
+  <script src="script.js"></script>
   <!-- Import Bootstrap link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
- 
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@500&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+
 <body>
-  <!-- <div class="container">
-    <div class="row py-5 justify-content-center">
-      <div class="col-8 align-self-center">
-        <wrapper id="quote-box">
-          <div class="card mb-3">
-            <div class="card-body col-md-3">
-
-            </div>
-            <div class="card-body col-md-6">
-              <div id="text"></div>
-              <div id="author"></div>
-              <button id="new-quote" onClick="generateQuote()">New Quote</button>
-              <a src=# id="tweet-quote" href="" target="_blank">Tweet This Quote!</a>
-            </div>  
-          </div>
-        </wrapper>
-      </div>
-    </div>
-  </div> -->
-
   <wrapper id="quote-box">
     <div class="container">
-      <div class="card my-3 bg-light border border-info shadow-sm">
-        <div class="row py-3 justify-content-center">
-          <div class="col-md-3">
-            <img src="http://upload.wikimedia.org/wikipedia/commons/1/1b/Abraham_Lincoln_November_1863.jpg" id="author-img"class="card-img" style="max-width: 120; max-height: 200" alt="...">
-          </div>
-          <div class="col-md-6">
-            <div class="card-body">
-              <p id="text" class="card-text" style="font-size: 1.2rem"></p><hr>
-              <h5 id="author" class="card-title font-weight-normal"></h5>
-              <button type="button" class="btn btn-info mr-3" id="new-quote" onClick="generateQuote()">New Quote</button>
-              <a src=# id="tweet-quote" href="" target="_blank">Tweet This Quote!</a>
+      <div class="card my-3 bg-light shadow-sm">
+        <div class="card-header text-center bg-dark text-light">
+          Random Quote Machine
+        </div>
+        <div class="row py-3 justify-content-around">
+            <div class="col-md-3 ml-5 align-self-center">
+              <img src=# id="author-image"class="card-img" style="max-width: 120; max-height: 200" alt="...">
             </div>
-          </div>
+            <div class="col-md-8 align-self-center">
+              <div class="card-body text-center">
+                <p id="text" class="card-text text-center py-3" style="font-size: 1.2rem"></p><hr>
+                <h5 id="author" class="card-title font-weight-normal py-4 mb-4 text-center"></h5>
+                <button type="button" class="btn btn-outline-info mr-3 align-items-end" id="new-quote" onClick="generateQuote()">New Quote</button>
+                <a src=# id="tweet-quote" class="btn btn-social-icon btn-twitter" href="" target="_blank">Tweet this Quote <span class="fa fa-twitter"></span></i></a>
+              </div>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+          Created for 
+          <i class="fa fa-free-code-camp"></i>
+           <span class="fcc-text">freeCodeCamp</span>
         </div>
       </div>
     </div>  
